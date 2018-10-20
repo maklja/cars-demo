@@ -1,0 +1,11 @@
+.loading-spinner {
+	font-size: 2em;
+}
+
+.loading-spinner.loading-spinner--hidden {
+	visibility: hidden;
+}
+
+.loading-spinner .loading-spinner__text {
+	text-align: center;
+}

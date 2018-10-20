@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarPreview renders correctly with Mazda 3 1`] = `
+<div
+  className="car-preview"
+  data-id={2}
+>
+  <div
+    className="car-preview__card"
+  >
+    <img
+      alt="Mazda 3"
+      className="car-preview__image"
+      src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+    />
+  </div>
+  <div
+    className="car-preview__title"
+  >
+    Mazda 3
+  </div>
+</div>
+`;
+
+exports[`CarPreview renders correctly with Mercedes Benz CLA 1`] = `
+<div
+  className="car-preview"
+  data-id={3}
+>
+  <div
+    className="car-preview__card"
+  >
+    <img
+      alt="Mercedes Benz CLA"
+      className="car-preview__image"
+      src="http://www.nriol.com/images/benz-cla.png"
+    />
+  </div>
+  <div
+    className="car-preview__title"
+  >
+    Mercedes Benz CLA
+  </div>
+</div>
+`;

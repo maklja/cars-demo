@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 // import polyfills for IE
 import 'whatwg-fetch';
 import 'core-js/es6/promise';
+import 'core-js/es6/object';
 
 import './index.css';
 import App from './App';

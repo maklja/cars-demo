@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row cars-overview-grid"
+  >
+    <div
+      className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
+    >
+      <div
+        className="car-preview"
+        data-id={2}
+      >
+        <div
+          className="car-preview__card"
+        >
+          <img
+            alt="Mazda 3"
+            className="car-preview__image"
+            src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+          />
+        </div>
+        <div
+          className="car-preview__title"
+        >
+          Mazda 3
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
+    >
+      <div
+        className="car-preview"
+        data-id={3}
+      >
+        <div
+          className="car-preview__card"
+        >
+          <img
+            alt="Mercedes Benz CLA"
+            className="car-preview__image"
+            src="http://www.nriol.com/images/benz-cla.png"
+          />
+        </div>
+        <div
+          className="car-preview__title"
+        >
+          Mercedes Benz CLA
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CarsOverview renders correctly with error message 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row cars-overview-grid"
+  >
+    <div
+      className="col-md-12"
+    >
+      Failed to fetch cars, please try again later.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CarsOverview renders correctly with loading message 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="row cars-overview-grid"
+  >
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="loading-spinner "
+      >
+        <div
+          className="sk-circle"
+        >
+          <div
+            className="sk-circle1 sk-child"
+          />
+          <div
+            className="sk-circle2 sk-child"
+          />
+          <div
+            className="sk-circle3 sk-child"
+          />
+          <div
+            className="sk-circle4 sk-child"
+          />
+          <div
+            className="sk-circle5 sk-child"
+          />
+          <div
+            className="sk-circle6 sk-child"
+          />
+          <div
+            className="sk-circle7 sk-child"
+          />
+          <div
+            className="sk-circle8 sk-child"
+          />
+          <div
+            className="sk-circle9 sk-child"
+          />
+          <div
+            className="sk-circle10 sk-child"
+          />
+          <div
+            className="sk-circle11 sk-child"
+          />
+          <div
+            className="sk-circle12 sk-child"
+          />
+        </div>
+        <div
+          className="loading-spinner__text"
+        >
+          <span>
+            Loading data, please wait...
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
