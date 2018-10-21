@@ -1,39 +1,18 @@
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import CarsOverview from './view/car/CarsOverview';
-import { fetchCars } from './actions/fetchCars';
+import './assets/css/fontello.css';
+
+import CarsPage from './view/car/CarsPage';
 import './App.css';
 
-export class App extends Component {
+class App extends Component {
 	render() {
 		return (
 			<div>
-				<CarsOverview />
+				<CarsPage />
 			</div>
 		);
 	}
-
-	componentDidMount() {
-		this.props.loadCars(); // fetch cars
-	}
 }
 
-App.propTypes = {
-	loadCars: PropTypes.func.isRequired
-};
-
-const mapDispatchToProps = dispatch => {
-	return {
-		loadCars() {
-			// send actions to fetch car
-			dispatch(fetchCars());
-		}
-	};
-};
-
-export default connect(
-	null,
-	mapDispatchToProps
-)(App);
+export default App;

@@ -11,8 +11,18 @@ import LoadingView from '../loading/LoadingView';
 export const CarsOverview = ({ cars, error, loading }) => {
 	let component = null;
 
+	if (error != null) {
+		// show error to the user
+		component = (
+			<div className="col-md-12">
+				<div className="cars-overview-grid__message">
+					Failed to fetch cars, please try again later.
+				</div>
+			</div>
+		);
+	}
 	// check if request is still loading
-	if (loading) {
+	else if (loading) {
 		// add delay of 2 sec, if request last less then 2 sec
 		// there is no point in showing spinner to the user
 		component = (
@@ -20,23 +30,25 @@ export const CarsOverview = ({ cars, error, loading }) => {
 				<LoadingView delay={2000} text="Loading data, please wait..." />
 			</div>
 		);
-	} else if (error != null) {
-		// show error to the user
-		component = (
-			<div className="col-md-12">
-				Failed to fetch cars, please try again later.
-			</div>
-		);
 	} else {
 		// show cars
-		component = cars.map(curCar => (
-			<div
-				className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
-				key={curCar.id}
-			>
-				<CarPreview {...curCar} />
-			</div>
-		));
+		component =
+			cars.length > 0 ? (
+				cars.map(curCar => (
+					<div
+						className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
+						key={curCar.id}
+					>
+						<CarPreview {...curCar} />
+					</div>
+				))
+			) : (
+				<div className="col-md-12">
+					<div className=" cars-overview-grid__message">
+						No cars found.
+					</div>
+				</div>
+			);
 	}
 
 	return (
@@ -60,11 +72,17 @@ CarsOverview.defaultProps = {
 const mapStateToProps = state => {
 	// get cars object from redux store
 	const { cars } = state;
+	const { searchCriteria, items, isFetching, error } = cars;
 
 	return {
-		cars: cars.items,
-		loading: cars.isFetching,
-		error: cars.error
+		cars:
+			searchCriteria.length > 0
+				? items.filter(curCar =>
+						curCar.name.toLowerCase().includes(searchCriteria)
+				  )
+				: items,
+		loading: isFetching,
+		error: error
 	};
 };
 

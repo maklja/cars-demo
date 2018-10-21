@@ -10,3 +10,41 @@ body {
 	padding: 0;
 	font-size: 62.5%;
 }
+
+/* default form control styles */
+
+.control[type = "text"] {
+	width: 100%;
+	padding: 0.6em 0.3em;
+	margin: 0.4em 0;
+	display: inline-block;
+	border: 0.063em solid #cccccc;
+	border-radius: 0.2em;
+	box-sizing: border-box;
+	font-size: 1.6em;
+}
+
+.button-control {
+	background-color: #e7e7e7;
+	border-radius: 0.2em;
+	border: none;
+	color: black;
+	padding: 0.6em 0.3em;
+	margin: 0.4em 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.6em;
+}
+
+.button-control[disabled] {
+	background-color: #cccccc;
+	color: #666666;
+}
+
+.button-control:not( [disabled] ):hover {
+	background-color: #4caf50;
+	transition: background-color 300ms;
+	color: white;
+	cursor: pointer;
+}

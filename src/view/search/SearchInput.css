@@ -1,0 +1,16 @@
+.search-input {
+	display: flex;
+	justify-content: center;
+}
+
+.search-input .search-input__input {
+	max-width: 30em;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.search-input .search-input__button {
+	width: 3em;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}

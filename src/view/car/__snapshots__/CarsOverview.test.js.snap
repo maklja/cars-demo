@@ -67,7 +67,11 @@ exports[`CarsOverview renders correctly with error message 1`] = `
     <div
       className="col-md-12"
     >
-      Failed to fetch cars, please try again later.
+      <div
+        className="cars-overview-grid__message"
+      >
+        Failed to fetch cars, please try again later.
+      </div>
     </div>
   </div>
 </div>

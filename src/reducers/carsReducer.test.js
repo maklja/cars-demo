@@ -5,6 +5,8 @@ import {
 	requestCarsFailed
 } from '../actions/fetchCars';
 
+import { searchCars } from '../actions/searchCars';
+
 it('check init state', () => {
 	const nextState = carsReducer(undefined, {
 		type: 'TEST_ACTION'
@@ -13,7 +15,8 @@ it('check init state', () => {
 	expect(nextState).toEqual({
 		items: [],
 		isFetching: false,
-		error: null
+		error: null,
+		searchCriteria: ''
 	});
 });
 
@@ -103,5 +106,31 @@ it('check state after requestCarsFailed action', () => {
 		items: [],
 		isFetching: false,
 		error: null
+	});
+});
+
+it('check state after searchCars action', () => {
+	const searchString = 'test string';
+	const state = {
+		items: [],
+		isFetching: false,
+		error: null,
+		searchCriteria: ''
+	};
+	const nextState = carsReducer(state, searchCars(searchString));
+
+	expect(nextState).toEqual({
+		items: [],
+		isFetching: false,
+		error: null,
+		searchCriteria: 'test string'
+	});
+
+	// reducer must be pure, so mutation is not allowed
+	expect(state).toEqual({
+		items: [],
+		isFetching: false,
+		error: null,
+		searchCriteria: ''
 	});
 });

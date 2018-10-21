@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput renders correctly with default props 1`] = `
+<div
+  className="search-input"
+>
+  <input
+    className="control search-input__input"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder=""
+    type="text"
+    value=""
+  />
+  <button
+    className="button-control search-input__button"
+    onClick={[Function]}
+  >
+    <i
+      className="icon-search"
+    />
+  </button>
+</div>
+`;
+
+exports[`SearchInput renders correctly with placeholder 1`] = `
+<div
+  className="search-input"
+>
+  <input
+    className="control search-input__input"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Test placeholder"
+    type="text"
+    value=""
+  />
+  <button
+    className="button-control search-input__button"
+    onClick={[Function]}
+  >
+    <i
+      className="icon-search"
+    />
+  </button>
+</div>
+`;
