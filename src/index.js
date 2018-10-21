@@ -9,6 +9,7 @@ import 'whatwg-fetch';
 import 'core-js/es6/promise';
 import 'core-js/es6/object';
 import 'core-js/es6/string';
+import 'core-js/modules/es7.array.includes';
 
 import './index.css';
 import App from './App';

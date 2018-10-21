@@ -1,4 +1,4 @@
-import carsReducer from './carsReducer';
+import carsReducer, { initState } from './carsReducer';
 import {
 	requestCars,
 	requestCarsSuccess,
@@ -6,18 +6,14 @@ import {
 } from '../actions/fetchCars';
 
 import { searchCars } from '../actions/searchCars';
+import { selectCar, deselectCar } from '../actions/selectCars';
 
 it('check init state', () => {
 	const nextState = carsReducer(undefined, {
 		type: 'TEST_ACTION'
 	});
 
-	expect(nextState).toEqual({
-		items: [],
-		isFetching: false,
-		error: null,
-		searchCriteria: ''
-	});
+	expect(nextState).toEqual(initState);
 });
 
 it('check unknown action state', () => {
@@ -132,5 +128,78 @@ it('check state after searchCars action', () => {
 		isFetching: false,
 		error: null,
 		searchCriteria: ''
+	});
+});
+
+it('check state after selectCar action', () => {
+	const carId = 1;
+	const state = {
+		selectedItems: []
+	};
+	const nextState = carsReducer(state, selectCar(carId));
+
+	expect(nextState).toEqual({
+		selectedItems: [carId]
+	});
+
+	// reducer must be pure, so mutation is not allowed
+	expect(state).toEqual({
+		selectedItems: []
+	});
+});
+
+it('check state after selecting already selected car', () => {
+	const carId = 1;
+	const state = {
+		selectedItems: []
+	};
+	const selectedCarState = carsReducer(state, selectCar(carId));
+	const sameState = carsReducer(selectedCarState, selectCar(carId));
+
+	expect(sameState).toBe(selectedCarState);
+
+	// reducer must be pure, so mutation is not allowed
+	expect(state).toEqual({
+		selectedItems: []
+	});
+});
+
+it('check state after deselectCar action', () => {
+	const carId = 1;
+	const state = {
+		selectedItems: []
+	};
+	// first select car
+	const selectedCarState = carsReducer(state, selectCar(carId));
+	// then deselect car
+	const deselectedCarState = carsReducer(
+		selectedCarState,
+		deselectCar(carId)
+	);
+
+	expect(deselectedCarState).toEqual({
+		selectedItems: []
+	});
+
+	// reducer must be pure, so mutation is not allowed
+	expect(state).toEqual({
+		selectedItems: []
+	});
+});
+
+it('check state after trying to deselecting car that is not selected', () => {
+	const carId = 1;
+	const unknownCarId = 2;
+	const state = {
+		selectedItems: []
+	};
+	const selectedCarState = carsReducer(state, selectCar(carId));
+	const sameState = carsReducer(selectedCarState, deselectCar(unknownCarId));
+
+	expect(sameState).toBe(selectedCarState);
+
+	// reducer must be pure, so mutation is not allowed
+	expect(state).toEqual({
+		selectedItems: []
 	});
 });
