@@ -6,12 +6,14 @@ import {
 } from '../actions/fetchCars';
 
 import { SEARCH_CARS } from '../actions/searchCars';
+import { SELECT_CAR, DESELECT_CAR } from '../actions/selectCars';
 
-const initState = {
+export const initState = {
 	items: [], // array will contain all cars from the server
 	isFetching: false, // is request in progress
 	error: null, // error if for some reason request fails
-	searchCriteria: '' // car search criteria
+	searchCriteria: '', // car search criteria
+	selectedItems: [] // selected car ids
 };
 
 export default (prevState = initState, action) => {
@@ -44,6 +46,28 @@ export default (prevState = initState, action) => {
 					.toLowerCase()
 					.replace(/\s+/g, ' ') // remove extra spaces in string
 					.trim() // remove spaces at the begin and end of string
+			};
+		case SELECT_CAR:
+			// if car is already selected, don't mutate state
+			if (prevState.selectedItems.includes(action.id)) {
+				return prevState;
+			}
+
+			return {
+				...prevState,
+				selectedItems: [...prevState.selectedItems, action.id]
+			};
+		case DESELECT_CAR:
+			// if car is not selected just return and don't mutate state
+			if (prevState.selectedItems.includes(action.id) === false) {
+				return prevState;
+			}
+
+			return {
+				...prevState,
+				selectedItems: prevState.selectedItems.filter(
+					curCarId => curCarId !== action.id // remove deselected id from array
+				)
 			};
 		default:
 			return prevState;

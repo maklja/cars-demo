@@ -11,17 +11,46 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA 1`] =
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview"
+        className="car-preview "
         data-id={2}
+        onClick={[Function]}
       >
         <div
           className="car-preview__card"
         >
-          <img
-            alt="Mazda 3"
-            className="car-preview__image"
-            src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-          />
+          <div
+            className="car-preview__front"
+          >
+            <img
+              alt="Mazda 3"
+              className="car-preview__image"
+              src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+            />
+          </div>
+          <div
+            className="car-preview__back"
+          >
+            <div
+              className="car-preview__overlay"
+            />
+            <div
+              className="car-preview__description"
+            >
+              <div>
+                The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.
+              </div>
+              <div>
+                Top speed: 
+                235
+                km/h
+              </div>
+            </div>
+            <img
+              alt="Mazda 3"
+              className="car-preview__image"
+              src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+            />
+          </div>
         </div>
         <div
           className="car-preview__title"
@@ -34,17 +63,46 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA 1`] =
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview"
+        className="car-preview "
         data-id={3}
+        onClick={[Function]}
       >
         <div
           className="car-preview__card"
         >
-          <img
-            alt="Mercedes Benz CLA"
-            className="car-preview__image"
-            src="http://www.nriol.com/images/benz-cla.png"
-          />
+          <div
+            className="car-preview__front"
+          >
+            <img
+              alt="Mercedes Benz CLA"
+              className="car-preview__image"
+              src="http://www.nriol.com/images/benz-cla.png"
+            />
+          </div>
+          <div
+            className="car-preview__back"
+          >
+            <div
+              className="car-preview__overlay"
+            />
+            <div
+              className="car-preview__description"
+            >
+              <div>
+                The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.
+              </div>
+              <div>
+                Top speed: 
+                280
+                km/h
+              </div>
+            </div>
+            <img
+              alt="Mercedes Benz CLA"
+              className="car-preview__image"
+              src="http://www.nriol.com/images/benz-cla.png"
+            />
+          </div>
         </div>
         <div
           className="car-preview__title"

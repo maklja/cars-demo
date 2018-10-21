@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap-grid.css'; // use bootstrap 4 grid system to support responsive design
 
 import { carPropTypes } from '../../props';
@@ -8,7 +7,13 @@ import './CarsOverview.css';
 import CarPreview from './CarPreview';
 import LoadingView from '../loading/LoadingView';
 
-export const CarsOverview = ({ cars, error, loading }) => {
+export const CarsOverview = ({
+	cars,
+	error,
+	loading,
+	onCarSelectionChange,
+	selectedCars
+}) => {
 	let component = null;
 
 	if (error != null) {
@@ -39,7 +44,11 @@ export const CarsOverview = ({ cars, error, loading }) => {
 						className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
 						key={curCar.id}
 					>
-						<CarPreview {...curCar} />
+						<CarPreview
+							{...curCar}
+							isSelected={selectedCars.includes(curCar.id)} // check if car is selected
+							onSelectionChanged={onCarSelectionChange} // callback is invoked every time selection on element changes
+						/>
 					</div>
 				))
 			) : (
@@ -61,29 +70,16 @@ export const CarsOverview = ({ cars, error, loading }) => {
 CarsOverview.propTypes = {
 	cars: PropTypes.arrayOf(PropTypes.shape(carPropTypes)).isRequired,
 	loading: PropTypes.bool,
-	error: PropTypes.instanceOf(Error)
+	error: PropTypes.instanceOf(Error),
+	onCarSelectionChange: PropTypes.func,
+	selectedCars: PropTypes.arrayOf(PropTypes.number)
 };
 
 CarsOverview.defaultProps = {
 	loading: false,
-	error: null
+	error: null,
+	onCarSelectionChange: () => {},
+	selectedCars: []
 };
 
-const mapStateToProps = state => {
-	// get cars object from redux store
-	const { cars } = state;
-	const { searchCriteria, items, isFetching, error } = cars;
-
-	return {
-		cars:
-			searchCriteria.length > 0
-				? items.filter(curCar =>
-						curCar.name.toLowerCase().includes(searchCriteria)
-				  )
-				: items,
-		loading: isFetching,
-		error: error
-	};
-};
-
-export default connect(mapStateToProps)(CarsOverview);
+export default CarsOverview;
