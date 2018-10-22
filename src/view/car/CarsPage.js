@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap-grid.css';
 import { carPropTypes } from '../../props';
 import Searchinput from '../search/SearchInput';
 import CarsOverview from './CarsOverview';
+import RaceTracks from '../race_track/RaceTracks';
 import { fetchCars } from '../../actions/fetchCars';
 import { searchCars } from '../../actions/searchCars';
 import { selectCar, deselectCar } from '../../actions/selectCars';
@@ -20,7 +21,13 @@ class CarsPage extends Component {
 	}
 
 	render() {
-		const { cars, loading, error, selectedCars } = this.props;
+		const {
+			cars,
+			loading,
+			error,
+			selectedCars,
+			searchCriteria
+		} = this.props;
 		return (
 			<div>
 				<div className="container-fluid">
@@ -35,11 +42,33 @@ class CarsPage extends Component {
 				</div>
 				<div>
 					<CarsOverview
-						cars={cars}
+						cars={
+							searchCriteria.length > 0
+								? cars.filter(curCar =>
+										curCar.name
+											.toLowerCase()
+											.includes(searchCriteria)
+								  )
+								: cars
+						}
 						loading={loading}
 						error={error}
 						selectedCars={selectedCars}
 						onCarSelectionChange={this._onCarSelectionChange}
+					/>
+				</div>
+				<div>
+					<RaceTracks
+						cars={cars
+							// filter only selected cars
+							.filter(curCar => selectedCars.includes(curCar.id))
+							// sort by selection order
+							.sort((carA, carB) => {
+								return (
+									selectedCars.indexOf(carA.id) -
+									selectedCars.indexOf(carB.id)
+								);
+							})}
 					/>
 				</div>
 			</div>
@@ -72,7 +101,8 @@ CarsPage.propTypes = {
 	error: PropTypes.instanceOf(Error),
 	selectCar: PropTypes.func,
 	deselectCar: PropTypes.func,
-	selectedCars: PropTypes.arrayOf(PropTypes.number)
+	selectedCars: PropTypes.arrayOf(PropTypes.number),
+	searchCriteria: PropTypes.string
 };
 
 CarsPage.defaultProps = {
@@ -80,20 +110,17 @@ CarsPage.defaultProps = {
 	error: null,
 	selectCar: () => {},
 	deselectCar: () => {},
-	selectedCars: []
+	selectedCars: [],
+	searchCriteria: ''
 };
 
-const mapStateToProps = (state, aa) => {
+const mapStateToProps = state => {
 	// get cars object from redux store
 	const { cars } = state;
 	const { searchCriteria, items, isFetching, error, selectedItems } = cars;
 	return {
-		cars:
-			searchCriteria.length > 0
-				? items.filter(curCar =>
-						curCar.name.toLowerCase().includes(searchCriteria)
-				  )
-				: items,
+		cars: items,
+		searchCriteria,
 		loading: isFetching,
 		error: error,
 		selectedCars: selectedItems

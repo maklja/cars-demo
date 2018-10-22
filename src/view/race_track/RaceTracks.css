@@ -1,0 +1,62 @@
+.race-tracks-overview {
+
+	/* class that provides layout for all tracks */
+	text-align: center;
+	margin-bottom: 6em;
+}
+
+.race-tracks-overview .race-tracks-overview__title {
+	font-size: 3em;
+	margin: 1em 0;
+}
+
+.race-tracks-overview .race-tracks-overview__message {
+
+	/* Styles for message when no cars are selected */
+	font-size: 2em;
+	padding: 6em 0;
+	background-color: #eeeeee;
+}
+
+.race-track {
+
+	/* Race track styles */
+	background-color: #eeeeee;
+	margin: 0.6em 0;
+	border: 0.063em solid #cccccc;
+	border-radius: 1em;
+	display: flex;
+	align-items: center;
+	position: relative;
+	min-height: 10em;
+	overflow: hidden;
+}
+
+.race-track .race-track__image {
+
+	/* car image on the track */
+	width: 12em;
+	z-index: 2; /* put image on top track line and finish line */
+}
+
+.race-track .race-track__line {
+
+	/* Track lines on the middle */
+	border: 0.063em dashed black;
+	position: absolute;
+	top: 50%;
+	left: 1em;
+	right: 1em;
+}
+
+.race-track .race-track__finish-line {
+
+	/* Finish line styles made from png image */
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2em;
+	background-image: url("../../assets/images/finish_line.png");
+	background-size: 200%;
+}

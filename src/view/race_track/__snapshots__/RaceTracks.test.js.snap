@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RaceTrack renders correctly with Mazda 3 car data 1`] = `
+<div
+  className="race-track"
+>
+  <img
+    alt="Mazda 3"
+    className="race-track__image"
+    src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+  />
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTracks renders correctly with no cars on track 1`] = `
+<div
+  className="container-fluid race-tracks-overview"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-tracks-overview__title"
+      >
+        Race tracks
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-tracks-overview__message"
+      >
+        Please select cars to start a race.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RaceTracks renders correctly with three cars on track 1`] = `
+<div
+  className="container-fluid race-tracks-overview"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-tracks-overview__title"
+      >
+        Race tracks
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-track"
+      >
+        <img
+          alt="Mazda 3"
+          className="race-track__image"
+          src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+        />
+        <div
+          className="race-track__line"
+        />
+        <div
+          className="race-track__finish-line"
+        />
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-track"
+      >
+        <img
+          alt="Mercedes Benz CLA"
+          className="race-track__image"
+          src="http://www.nriol.com/images/benz-cla.png"
+        />
+        <div
+          className="race-track__line"
+        />
+        <div
+          className="race-track__finish-line"
+        />
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-track"
+      >
+        <img
+          alt="Fiat Punto"
+          className="race-track__image"
+          src="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+        />
+        <div
+          className="race-track__line"
+        />
+        <div
+          className="race-track__finish-line"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
