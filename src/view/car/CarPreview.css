@@ -19,7 +19,7 @@
 .car-preview .car-preview__card {
 
 	/* Card container that contains front and back parts */
-	height: 100%;
+	height: 90%;
 	width: 100%;
 	position: relative;
 	transform-style: preserve-3d;

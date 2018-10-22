@@ -20,7 +20,7 @@ class CarsPage extends Component {
 	}
 
 	render() {
-		const { cars, loading, error } = this.props;
+		const { cars, loading, error, selectedCars } = this.props;
 		return (
 			<div>
 				<div className="container-fluid">
@@ -38,6 +38,7 @@ class CarsPage extends Component {
 						cars={cars}
 						loading={loading}
 						error={error}
+						selectedCars={selectedCars}
 						onCarSelectionChange={this._onCarSelectionChange}
 					/>
 				</div>
@@ -70,20 +71,22 @@ CarsPage.propTypes = {
 	loading: PropTypes.bool,
 	error: PropTypes.instanceOf(Error),
 	selectCar: PropTypes.func,
-	deselectCar: PropTypes.func
+	deselectCar: PropTypes.func,
+	selectedCars: PropTypes.arrayOf(PropTypes.number)
 };
 
 CarsPage.defaultProps = {
 	loading: false,
 	error: null,
 	selectCar: () => {},
-	deselectCar: () => {}
+	deselectCar: () => {},
+	selectedCars: []
 };
 
 const mapStateToProps = (state, aa) => {
 	// get cars object from redux store
 	const { cars } = state;
-	const { searchCriteria, items, isFetching, error } = cars;
+	const { searchCriteria, items, isFetching, error, selectedItems } = cars;
 	return {
 		cars:
 			searchCriteria.length > 0
@@ -92,7 +95,8 @@ const mapStateToProps = (state, aa) => {
 				  )
 				: items,
 		loading: isFetching,
-		error: error
+		error: error,
+		selectedCars: selectedItems
 	};
 };
 
