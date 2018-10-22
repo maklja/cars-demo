@@ -27,7 +27,9 @@ exports[`CarPreview renders correctly when selected 1`] = `
       <div
         className="car-preview__description"
       >
-        <div>
+        <div
+          className="car-preview__description-text"
+        >
           The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.
         </div>
         <div>
@@ -78,7 +80,9 @@ exports[`CarPreview renders correctly with Mazda 3 1`] = `
       <div
         className="car-preview__description"
       >
-        <div>
+        <div
+          className="car-preview__description-text"
+        >
           The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.
         </div>
         <div>
@@ -129,7 +133,9 @@ exports[`CarPreview renders correctly with Mercedes Benz CLA 1`] = `
       <div
         className="car-preview__description"
       >
-        <div>
+        <div
+          className="car-preview__description-text"
+        >
           The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.
         </div>
         <div>

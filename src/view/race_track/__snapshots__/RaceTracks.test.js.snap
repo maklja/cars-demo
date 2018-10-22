@@ -1,14 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RaceTrack renders correctly with Mazda 3 car data 1`] = `
+exports[`RaceTrack tests RaceTrack renders correctly with Mazda 3 car data 1`] = `
 <div
-  className="race-track"
+  className="race-track "
+  title="Top speed: 235"
 >
-  <img
-    alt="Mazda 3"
-    className="race-track__image"
-    src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-  />
+  <div
+    className="race-track__wrapper"
+  >
+    <div
+      className="race-track__finish undefined"
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+    </div>
+  </div>
   <div
     className="race-track__line"
   />
@@ -18,7 +27,136 @@ exports[`RaceTrack renders correctly with Mazda 3 car data 1`] = `
 </div>
 `;
 
-exports[`RaceTracks renders correctly with no cars on track 1`] = `
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 1`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper"
+  >
+    <div
+      className="race-track__finish race-track__finish--first-place"
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 2`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper"
+  >
+    <div
+      className="race-track__finish race-track__finish--second-place"
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 3`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper"
+  >
+    <div
+      className="race-track__finish race-track__finish--third-place"
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          3
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 4`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper"
+  >
+    <div
+      className="race-track__finish "
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTracks test RaceTracks renders correctly with no cars on track 1`] = `
 <div
   className="container-fluid race-tracks-overview"
 >
@@ -43,11 +181,35 @@ exports[`RaceTracks renders correctly with no cars on track 1`] = `
         Please select cars to start a race.
       </div>
     </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-tracks-overview__button"
+      >
+        <button
+          className="button-control button-control--large"
+          disabled={true}
+          name="start-race"
+          onClick={[Function]}
+        >
+          Start
+        </button>
+        <button
+          className="button-control button-control--large"
+          disabled={true}
+          name="reset-race"
+          onClick={[Function]}
+        >
+          Reset
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
-exports[`RaceTracks renders correctly with three cars on track 1`] = `
+exports[`RaceTracks test RaceTracks renders correctly with three cars on track 1`] = `
 <div
   className="container-fluid race-tracks-overview"
 >
@@ -67,13 +229,22 @@ exports[`RaceTracks renders correctly with three cars on track 1`] = `
       className="col-md-12"
     >
       <div
-        className="race-track"
+        className="race-track "
+        title="Top speed: 235"
       >
-        <img
-          alt="Mazda 3"
-          className="race-track__image"
-          src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-        />
+        <div
+          className="race-track__wrapper"
+        >
+          <div
+            className="race-track__finish undefined"
+          >
+            <img
+              alt="Mazda 3"
+              className="race-track__image"
+              src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+            />
+          </div>
+        </div>
         <div
           className="race-track__line"
         />
@@ -86,13 +257,22 @@ exports[`RaceTracks renders correctly with three cars on track 1`] = `
       className="col-md-12"
     >
       <div
-        className="race-track"
+        className="race-track "
+        title="Top speed: 280"
       >
-        <img
-          alt="Mercedes Benz CLA"
-          className="race-track__image"
-          src="http://www.nriol.com/images/benz-cla.png"
-        />
+        <div
+          className="race-track__wrapper"
+        >
+          <div
+            className="race-track__finish undefined"
+          >
+            <img
+              alt="Mercedes Benz CLA"
+              className="race-track__image"
+              src="http://www.nriol.com/images/benz-cla.png"
+            />
+          </div>
+        </div>
         <div
           className="race-track__line"
         />
@@ -105,19 +285,52 @@ exports[`RaceTracks renders correctly with three cars on track 1`] = `
       className="col-md-12"
     >
       <div
-        className="race-track"
+        className="race-track "
+        title="Top speed: 148"
       >
-        <img
-          alt="Fiat Punto"
-          className="race-track__image"
-          src="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
-        />
+        <div
+          className="race-track__wrapper"
+        >
+          <div
+            className="race-track__finish undefined"
+          >
+            <img
+              alt="Fiat Punto"
+              className="race-track__image"
+              src="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+            />
+          </div>
+        </div>
         <div
           className="race-track__line"
         />
         <div
           className="race-track__finish-line"
         />
+      </div>
+    </div>
+    <div
+      className="col-md-12"
+    >
+      <div
+        className="race-tracks-overview__button"
+      >
+        <button
+          className="button-control button-control--large"
+          disabled={false}
+          name="start-race"
+          onClick={[Function]}
+        >
+          Start
+        </button>
+        <button
+          className="button-control button-control--large"
+          disabled={true}
+          name="reset-race"
+          onClick={[Function]}
+        >
+          Reset
+        </button>
       </div>
     </div>
   </div>

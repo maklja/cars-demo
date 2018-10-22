@@ -39,7 +39,9 @@ class CarPreview extends Component {
 					<div className="car-preview__back">
 						<div className="car-preview__overlay" />
 						<div className="car-preview__description">
-							<div>{description}</div>
+							<div className="car-preview__description-text">
+								{description}
+							</div>
 							<div>
 								Top speed: {speed}
 								km/h

@@ -18,6 +18,12 @@
 	background-color: #eeeeee;
 }
 
+.race-tracks-overview .race-tracks-overview__button {
+
+	/* start button styles */
+	text-align: right;
+}
+
 .race-track {
 
 	/* Race track styles */
@@ -25,18 +31,68 @@
 	margin: 0.6em 0;
 	border: 0.063em solid #cccccc;
 	border-radius: 1em;
-	display: flex;
-	align-items: center;
 	position: relative;
 	min-height: 10em;
 	overflow: hidden;
 }
 
-.race-track .race-track__image {
+.race-track .race-track__wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2; /* put image on top track line and finish line */
+	transition: transform 0s;
+}
+
+.race-track .race-track__wrapper .race-track__finish {
+	display: flex;
+	align-items: center;
+	border-radius: 1em;
+	width: 12em;
+	height: 100%;
+	transition: transform 0s; /* for this part of task just put image at the finish line */
+}
+
+.race-track .race-track__finish.race-track__finish--first-place {
+	background-color: rgba(255, 223, 0, 0.8);
+}
+
+.race-track .race-track__finish.race-track__finish--second-place {
+	background-color: rgba(192, 192, 192, 0.8);
+}
+
+.race-track .race-track__finish.race-track__finish--third-place {
+	background-color: rgba(205, 127, 50, 0.8);
+}
+
+.race-track .race-track__wrapper .race-track__place-number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 6em;
+	color: white;
+}
+
+.race-track .race-track__wrapper .race-track__image {
 
 	/* car image on the track */
-	width: 12em;
-	z-index: 2; /* put image on top track line and finish line */
+	max-width: 100%;
+	width: 100%;
+}
+
+.race-track.race-track--race-end .race-track__wrapper {
+	transform: translateX(100%);
+}
+
+.race-track.race-track--race-end .race-track__wrapper .race-track__finish {
+	transform: translateX(-100%);
 }
 
 .race-track .race-track__line {
