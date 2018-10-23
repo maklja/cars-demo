@@ -13,6 +13,17 @@ import { searchCars } from '../../actions/searchCars';
 import { selectCar, deselectCar } from '../../actions/selectCars';
 import { START_POSITION } from '../../actions/trackRace';
 import conf from '../../conf';
+import { withErrorHandler } from '../error/ErrorView';
+import { withLoading } from '../loading/LoadingView';
+
+const CarsOverviewWithErrorHandler = withErrorHandler(CarsOverview, {
+	message: 'Failed to fetch cars, please try again later.',
+	className: 'col-md-12 cars-overview-grid__message'
+});
+
+const CarsOverviewHOC = withLoading(CarsOverviewWithErrorHandler, {
+	className: 'col-md-12'
+});
 
 class CarsPage extends Component {
 	constructor(props) {
@@ -44,7 +55,7 @@ class CarsPage extends Component {
 					</div>
 				</div>
 				<div>
-					<CarsOverview
+					<CarsOverviewHOC
 						disableSelection={disableSelection}
 						cars={
 							searchCriteria.length > 0

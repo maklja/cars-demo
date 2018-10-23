@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorView renders correctly with className and error 1`] = `
+<div
+  className="error-msg"
+>
+  <div
+    className="error-message"
+  >
+    Error: Request error
+  </div>
+</div>
+`;
+
+exports[`ErrorView renders correctly with error 1`] = `
+<div
+  className=""
+>
+  <div
+    className="error-message"
+  >
+    Error: Request error
+  </div>
+</div>
+`;
+
+exports[`ErrorView renders correctly with error and message prop 1`] = `
+<div
+  className=""
+>
+  <div
+    className="error-message"
+  >
+    Unable to fetch cars from server.
+  </div>
+</div>
+`;

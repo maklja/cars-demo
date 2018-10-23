@@ -26,7 +26,7 @@ export const fetchCars = () => {
 			});
 			const carData = await response.json();
 
-			dispatch(requestCarsSuccess(carData.data));
+			dispatch(requestCarsSuccess(carData.data)); // comment this line to view loading spinner
 		} catch (err) {
 			dispatch(requestCarsFailed(err));
 		}

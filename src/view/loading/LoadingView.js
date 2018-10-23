@@ -71,3 +71,22 @@ LoadingSpinner.defaultProps = {
 	visible: false,
 	delay: 0
 };
+
+// create HOC for loading
+export const withLoading = (
+	Component, // React component
+	{ delay = 2000, text = 'Loading data, please wait...', className = '' } = {} // options
+) => {
+	return props => {
+		const { loading } = props;
+		const view = loading ? (
+			<div className={className}>
+				<LoadingSpinner delay={delay} text={text} />
+			</div>
+		) : (
+			<Component {...props} />
+		);
+
+		return view;
+	};
+};
