@@ -1,0 +1,94 @@
+.race-track {
+
+	/* Race track styles */
+	background-color: #eeeeee;
+	margin: 0.6em 0;
+	border: 0.063em solid #cccccc;
+	border-radius: 1em;
+	position: relative;
+	min-height: 10em;
+	overflow: hidden;
+}
+
+.race-track .race-track__wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2; /* put image on top track line and finish line */
+}
+
+.race-track .race-track__move {
+	transition: transform 0s ease-in-out; /* easy-in-out to simulate car acceleration at the begin of animation and slow down at the end */
+}
+
+.race-track .race-track__wrapper .race-track__car {
+	display: flex;
+	align-items: center;
+	border-radius: 1em;
+	width: 12em;
+	height: 100%;
+}
+
+.race-track .race-track__car.race-track__car--first-place {
+	background-color: rgba(255, 223, 0, 0.8);
+}
+
+.race-track .race-track__car.race-track__car--second-place {
+	background-color: rgba(192, 192, 192, 0.8);
+}
+
+.race-track .race-track__car.race-track__car--third-place {
+	background-color: rgba(205, 127, 50, 0.8);
+}
+
+.race-track .race-track__wrapper .race-track__place-number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 6em;
+	color: white;
+}
+
+.race-track .race-track__car .race-track__image {
+
+	/* car image on the track */
+	max-width: 100%;
+	width: 100%;
+}
+
+.race-track.race-track--race-end .race-track__wrapper {
+	transform: translateX(100%);
+}
+
+.race-track.race-track--race-end .race-track__wrapper .race-track__car {
+	transform: translateX(-100%);
+}
+
+.race-track .race-track__line {
+
+	/* Track lines on the middle */
+	border: 0.063em dashed black;
+	position: absolute;
+	top: 50%;
+	left: 1em;
+	right: 1em;
+}
+
+.race-track .race-track__finish-line {
+
+	/* Finish line styles made from png image */
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2em;
+	background-image: url("../../assets/images/finish_line.png");
+	background-size: 200%;
+}

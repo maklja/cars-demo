@@ -17,14 +17,21 @@ class CarPreview extends Component {
 	}
 
 	render() {
-		const { id, speed, name, image, description } = this.props;
+		const {
+			id,
+			speed,
+			name,
+			image,
+			description,
+			disableSelection
+		} = this.props;
 		const { isSelected } = this.state;
 
 		return (
 			<div
 				className={`car-preview ${
 					isSelected ? 'car-preview--selected' : '' // is selected put border around tile
-				}`}
+				} ${disableSelection ? 'car-preview--disabled' : ''}`}
 				data-id={id}
 				onClick={this._onClick}
 			>
@@ -60,7 +67,13 @@ class CarPreview extends Component {
 	}
 
 	_onClick() {
-		const { id, onSelectionChanged } = this.props;
+		const { id, onSelectionChanged, disableSelection } = this.props;
+
+		// if selection is disable, just return
+		if (disableSelection) {
+			return;
+		}
+
 		this.setState(
 			state => {
 				return {
@@ -75,13 +88,15 @@ class CarPreview extends Component {
 CarPreview.propTypes = {
 	...carPropTypes,
 	isSelected: PropTypes.bool,
-	onSelectionChanged: PropTypes.func
+	onSelectionChanged: PropTypes.func,
+	disableSelection: PropTypes.bool
 };
 
 CarPreview.defaultProps = {
 	...carPropDefaults,
 	isSelected: false,
-	onSelectionChanged: () => {}
+	onSelectionChanged: () => {},
+	disableSelection: false
 };
 
 export default CarPreview;

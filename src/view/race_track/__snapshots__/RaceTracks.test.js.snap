@@ -1,161 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RaceTrack tests RaceTrack renders correctly with Mazda 3 car data 1`] = `
-<div
-  className="race-track "
-  title="Top speed: 235"
->
-  <div
-    className="race-track__wrapper"
-  >
-    <div
-      className="race-track__finish undefined"
-    >
-      <img
-        alt="Mazda 3"
-        className="race-track__image"
-        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-      />
-    </div>
-  </div>
-  <div
-    className="race-track__line"
-  />
-  <div
-    className="race-track__finish-line"
-  />
-</div>
-`;
-
-exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 1`] = `
-<div
-  className="race-track "
-  title="Top speed: 235"
->
-  <div
-    className="race-track__wrapper"
-  >
-    <div
-      className="race-track__finish race-track__finish--first-place"
-    >
-      <img
-        alt="Mazda 3"
-        className="race-track__image"
-        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-      />
-      <div
-        className="race-track__place-number"
-      >
-        <div>
-          1
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="race-track__line"
-  />
-  <div
-    className="race-track__finish-line"
-  />
-</div>
-`;
-
-exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 2`] = `
-<div
-  className="race-track "
-  title="Top speed: 235"
->
-  <div
-    className="race-track__wrapper"
-  >
-    <div
-      className="race-track__finish race-track__finish--second-place"
-    >
-      <img
-        alt="Mazda 3"
-        className="race-track__image"
-        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-      />
-      <div
-        className="race-track__place-number"
-      >
-        <div>
-          2
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="race-track__line"
-  />
-  <div
-    className="race-track__finish-line"
-  />
-</div>
-`;
-
-exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 3`] = `
-<div
-  className="race-track "
-  title="Top speed: 235"
->
-  <div
-    className="race-track__wrapper"
-  >
-    <div
-      className="race-track__finish race-track__finish--third-place"
-    >
-      <img
-        alt="Mazda 3"
-        className="race-track__image"
-        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-      />
-      <div
-        className="race-track__place-number"
-      >
-        <div>
-          3
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="race-track__line"
-  />
-  <div
-    className="race-track__finish-line"
-  />
-</div>
-`;
-
-exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 4`] = `
-<div
-  className="race-track "
-  title="Top speed: 235"
->
-  <div
-    className="race-track__wrapper"
-  >
-    <div
-      className="race-track__finish "
-    >
-      <img
-        alt="Mazda 3"
-        className="race-track__image"
-        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
-      />
-    </div>
-  </div>
-  <div
-    className="race-track__line"
-  />
-  <div
-    className="race-track__finish-line"
-  />
-</div>
-`;
-
 exports[`RaceTracks test RaceTracks renders correctly with no cars on track 1`] = `
 <div
   className="container-fluid race-tracks-overview"
@@ -233,10 +77,20 @@ exports[`RaceTracks test RaceTracks renders correctly with three cars on track 1
         title="Top speed: 235"
       >
         <div
-          className="race-track__wrapper"
+          className="race-track__wrapper race-track__move"
+          style={
+            Object {
+              "transitionDuration": "0s",
+            }
+          }
         >
           <div
-            className="race-track__finish undefined"
+            className="race-track__car race-track__move "
+            style={
+              Object {
+                "transitionDuration": "0s",
+              }
+            }
           >
             <img
               alt="Mazda 3"
@@ -261,10 +115,20 @@ exports[`RaceTracks test RaceTracks renders correctly with three cars on track 1
         title="Top speed: 280"
       >
         <div
-          className="race-track__wrapper"
+          className="race-track__wrapper race-track__move"
+          style={
+            Object {
+              "transitionDuration": "0s",
+            }
+          }
         >
           <div
-            className="race-track__finish undefined"
+            className="race-track__car race-track__move "
+            style={
+              Object {
+                "transitionDuration": "0s",
+              }
+            }
           >
             <img
               alt="Mercedes Benz CLA"
@@ -289,10 +153,20 @@ exports[`RaceTracks test RaceTracks renders correctly with three cars on track 1
         title="Top speed: 148"
       >
         <div
-          className="race-track__wrapper"
+          className="race-track__wrapper race-track__move"
+          style={
+            Object {
+              "transitionDuration": "0s",
+            }
+          }
         >
           <div
-            className="race-track__finish undefined"
+            className="race-track__car race-track__move "
+            style={
+              Object {
+                "transitionDuration": "0s",
+              }
+            }
           >
             <img
               alt="Fiat Punto"
@@ -335,4 +209,336 @@ exports[`RaceTracks test RaceTracks renders correctly with three cars on track 1
     </div>
   </div>
 </div>
+`;
+
+exports[`RaceTracks test check race result after start button is clicked 1`] = `
+<RaceTracks
+  cars={
+    Array [
+      Object {
+        "description": "The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.",
+        "id": 2,
+        "image": "https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png",
+        "name": "Mazda 3",
+        "speed": 235,
+      },
+      Object {
+        "description": "The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.",
+        "id": 3,
+        "image": "http://www.nriol.com/images/benz-cla.png",
+        "name": "Mercedes Benz CLA",
+        "speed": 280,
+      },
+      Object {
+        "description": "The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993.",
+        "id": 1,
+        "image": "https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png",
+        "name": "Fiat Punto",
+        "speed": 148,
+      },
+      Object {
+        "description": "Yugo",
+        "id": 11,
+        "image": "https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png",
+        "name": "Yugo",
+        "speed": 99,
+      },
+    ]
+  }
+  finishRace={[Function]}
+  isRaceStarted={false}
+  resetRace={[Function]}
+  startRace={[Function]}
+  trackDistance={0}
+>
+  <div
+    className="container-fluid race-tracks-overview"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-12"
+      >
+        <div
+          className="race-tracks-overview__title"
+        >
+          Race tracks
+        </div>
+      </div>
+      <div
+        className="col-md-12"
+        key="2"
+      >
+        <RaceTrack
+          description="The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993."
+          id={2}
+          image="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+          isRaceStarted={false}
+          name="Mazda 3"
+          onFinishCallback={[Function]}
+          place={1}
+          speed={235}
+          trackDistance={0}
+        >
+          <div
+            className="race-track "
+            title="Top speed: 235"
+          >
+            <div
+              className="race-track__wrapper race-track__move"
+              style={
+                Object {
+                  "transitionDuration": "0s",
+                }
+              }
+            >
+              <div
+                className="race-track__car race-track__move race-track__car--second-place"
+                style={
+                  Object {
+                    "transitionDuration": "0s",
+                  }
+                }
+              >
+                <img
+                  alt="Mazda 3"
+                  className="race-track__image"
+                  src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+                />
+                <RaceTrackPlace
+                  place={1}
+                >
+                  <div
+                    className="race-track__place-number"
+                  >
+                    <div>
+                      2
+                    </div>
+                  </div>
+                </RaceTrackPlace>
+              </div>
+            </div>
+            <div
+              className="race-track__line"
+            />
+            <div
+              className="race-track__finish-line"
+            />
+          </div>
+        </RaceTrack>
+      </div>
+      <div
+        className="col-md-12"
+        key="3"
+      >
+        <RaceTrack
+          description="The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993."
+          id={3}
+          image="http://www.nriol.com/images/benz-cla.png"
+          isRaceStarted={false}
+          name="Mercedes Benz CLA"
+          onFinishCallback={[Function]}
+          place={0}
+          speed={280}
+          trackDistance={0}
+        >
+          <div
+            className="race-track "
+            title="Top speed: 280"
+          >
+            <div
+              className="race-track__wrapper race-track__move"
+              style={
+                Object {
+                  "transitionDuration": "0s",
+                }
+              }
+            >
+              <div
+                className="race-track__car race-track__move race-track__car--first-place"
+                style={
+                  Object {
+                    "transitionDuration": "0s",
+                  }
+                }
+              >
+                <img
+                  alt="Mercedes Benz CLA"
+                  className="race-track__image"
+                  src="http://www.nriol.com/images/benz-cla.png"
+                />
+                <RaceTrackPlace
+                  place={0}
+                >
+                  <div
+                    className="race-track__place-number"
+                  >
+                    <div>
+                      1
+                    </div>
+                  </div>
+                </RaceTrackPlace>
+              </div>
+            </div>
+            <div
+              className="race-track__line"
+            />
+            <div
+              className="race-track__finish-line"
+            />
+          </div>
+        </RaceTrack>
+      </div>
+      <div
+        className="col-md-12"
+        key="1"
+      >
+        <RaceTrack
+          description="The Fiat Punto is a supermini car produced by the Italian manufacturer Fiat since 1993."
+          id={1}
+          image="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+          isRaceStarted={false}
+          name="Fiat Punto"
+          onFinishCallback={[Function]}
+          place={2}
+          speed={148}
+          trackDistance={0}
+        >
+          <div
+            className="race-track "
+            title="Top speed: 148"
+          >
+            <div
+              className="race-track__wrapper race-track__move"
+              style={
+                Object {
+                  "transitionDuration": "0s",
+                }
+              }
+            >
+              <div
+                className="race-track__car race-track__move race-track__car--third-place"
+                style={
+                  Object {
+                    "transitionDuration": "0s",
+                  }
+                }
+              >
+                <img
+                  alt="Fiat Punto"
+                  className="race-track__image"
+                  src="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+                />
+                <RaceTrackPlace
+                  place={2}
+                >
+                  <div
+                    className="race-track__place-number"
+                  >
+                    <div>
+                      3
+                    </div>
+                  </div>
+                </RaceTrackPlace>
+              </div>
+            </div>
+            <div
+              className="race-track__line"
+            />
+            <div
+              className="race-track__finish-line"
+            />
+          </div>
+        </RaceTrack>
+      </div>
+      <div
+        className="col-md-12"
+        key="11"
+      >
+        <RaceTrack
+          description="Yugo"
+          id={11}
+          image="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+          isRaceStarted={false}
+          name="Yugo"
+          onFinishCallback={[Function]}
+          place={3}
+          speed={99}
+          trackDistance={0}
+        >
+          <div
+            className="race-track "
+            title="Top speed: 99"
+          >
+            <div
+              className="race-track__wrapper race-track__move"
+              style={
+                Object {
+                  "transitionDuration": "0s",
+                }
+              }
+            >
+              <div
+                className="race-track__car race-track__move "
+                style={
+                  Object {
+                    "transitionDuration": "0s",
+                  }
+                }
+              >
+                <img
+                  alt="Yugo"
+                  className="race-track__image"
+                  src="https://lb.assets.fiat.com/assets/00/punto-my16/images/thumbnail/equipment/street.png"
+                />
+                <RaceTrackPlace
+                  place={3}
+                >
+                  <div
+                    className="race-track__place-number"
+                  >
+                    <div>
+                      4
+                    </div>
+                  </div>
+                </RaceTrackPlace>
+              </div>
+            </div>
+            <div
+              className="race-track__line"
+            />
+            <div
+              className="race-track__finish-line"
+            />
+          </div>
+        </RaceTrack>
+      </div>
+      <div
+        className="col-md-12"
+      >
+        <div
+          className="race-tracks-overview__button"
+        >
+          <button
+            className="button-control button-control--large"
+            disabled={false}
+            name="start-race"
+            onClick={[Function]}
+          >
+            Start
+          </button>
+          <button
+            className="button-control button-control--large"
+            disabled={true}
+            name="reset-race"
+            onClick={[Function]}
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</RaceTracks>
 `;

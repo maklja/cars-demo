@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RaceTrack tests RaceTrack renders correctly with Mazda 3 car data 1`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper race-track__move"
+    style={
+      Object {
+        "transitionDuration": "0s",
+      }
+    }
+  >
+    <div
+      className="race-track__car race-track__move "
+      style={
+        Object {
+          "transitionDuration": "0s",
+        }
+      }
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 1`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper race-track__move"
+    style={
+      Object {
+        "transitionDuration": "0s",
+      }
+    }
+  >
+    <div
+      className="race-track__car race-track__move race-track__car--first-place"
+      style={
+        Object {
+          "transitionDuration": "0s",
+        }
+      }
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          1
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 2`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper race-track__move"
+    style={
+      Object {
+        "transitionDuration": "0s",
+      }
+    }
+  >
+    <div
+      className="race-track__car race-track__move race-track__car--second-place"
+      style={
+        Object {
+          "transitionDuration": "0s",
+        }
+      }
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 3`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper race-track__move"
+    style={
+      Object {
+        "transitionDuration": "0s",
+      }
+    }
+  >
+    <div
+      className="race-track__car race-track__move race-track__car--third-place"
+      style={
+        Object {
+          "transitionDuration": "0s",
+        }
+      }
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          3
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;
+
+exports[`RaceTrack tests RaceTrack renders correctly with gold, silver, bronze place and fourth place 4`] = `
+<div
+  className="race-track "
+  title="Top speed: 235"
+>
+  <div
+    className="race-track__wrapper race-track__move"
+    style={
+      Object {
+        "transitionDuration": "0s",
+      }
+    }
+  >
+    <div
+      className="race-track__car race-track__move "
+      style={
+        Object {
+          "transitionDuration": "0s",
+        }
+      }
+    >
+      <img
+        alt="Mazda 3"
+        className="race-track__image"
+        src="https://www.mazdausa.com/siteassets/vehicles/2017/m3s/trims/sport/17-m3s-sp-25d-snowflake-white.png"
+      />
+      <div
+        className="race-track__place-number"
+      >
+        <div>
+          4
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="race-track__line"
+  />
+  <div
+    className="race-track__finish-line"
+  />
+</div>
+`;

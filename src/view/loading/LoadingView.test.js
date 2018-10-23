@@ -16,7 +16,7 @@ it('LoadingView renders correctly with custom text message', () => {
 });
 
 it('LoadingView renders correctly with delay and custom message', () => {
-	jest.useFakeTimers(); // we need to controll setTimeout trigger inside LoadingView
+	jest.useFakeTimers(); // we need to control setTimeout trigger inside LoadingView
 
 	const loadingViewInstance = renderer.create(
 		<LoadingView delay={10000} text="Loading message" />

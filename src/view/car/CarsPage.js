@@ -5,12 +5,14 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap-grid.css';
 
 import { carPropTypes } from '../../props';
-import Searchinput from '../search/SearchInput';
+import SearchInput from '../search/SearchInput';
 import CarsOverview from './CarsOverview';
 import RaceTracks from '../race_track/RaceTracks';
 import { fetchCars } from '../../actions/fetchCars';
 import { searchCars } from '../../actions/searchCars';
 import { selectCar, deselectCar } from '../../actions/selectCars';
+import { START_POSITION } from '../../actions/trackRace';
+import conf from '../../conf';
 
 class CarsPage extends Component {
 	constructor(props) {
@@ -26,14 +28,15 @@ class CarsPage extends Component {
 			loading,
 			error,
 			selectedCars,
-			searchCriteria
+			searchCriteria,
+			disableSelection
 		} = this.props;
 		return (
 			<div>
 				<div className="container-fluid">
 					<div className="row">
 						<div className="col-md-12">
-							<Searchinput
+							<SearchInput
 								placeholder="Search..."
 								onSearchCallback={this._onSearch}
 							/>
@@ -42,6 +45,7 @@ class CarsPage extends Component {
 				</div>
 				<div>
 					<CarsOverview
+						disableSelection={disableSelection}
 						cars={
 							searchCriteria.length > 0
 								? cars.filter(curCar =>
@@ -59,6 +63,7 @@ class CarsPage extends Component {
 				</div>
 				<div>
 					<RaceTracks
+						trackDistance={conf.traceTrackDistance}
 						cars={cars
 							// filter only selected cars
 							.filter(curCar => selectedCars.includes(curCar.id))
@@ -102,7 +107,8 @@ CarsPage.propTypes = {
 	selectCar: PropTypes.func,
 	deselectCar: PropTypes.func,
 	selectedCars: PropTypes.arrayOf(PropTypes.number),
-	searchCriteria: PropTypes.string
+	searchCriteria: PropTypes.string,
+	disableSelection: PropTypes.bool
 };
 
 CarsPage.defaultProps = {
@@ -111,19 +117,23 @@ CarsPage.defaultProps = {
 	selectCar: () => {},
 	deselectCar: () => {},
 	selectedCars: [],
-	searchCriteria: ''
+	searchCriteria: '',
+	disableSelection: false
 };
 
 const mapStateToProps = state => {
 	// get cars object from redux store
-	const { cars } = state;
+	const { cars, traceRace } = state;
 	const { searchCriteria, items, isFetching, error, selectedItems } = cars;
+	const { state: raceState } = traceRace;
+
 	return {
 		cars: items,
 		searchCriteria,
 		loading: isFetching,
 		error: error,
-		selectedCars: selectedItems
+		selectedCars: selectedItems,
+		disableSelection: raceState === START_POSITION // if race is in progress disable selection
 	};
 };
 

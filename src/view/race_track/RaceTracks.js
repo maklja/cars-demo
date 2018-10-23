@@ -1,75 +1,35 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import { carPropTypes } from '../../props';
+import RaceTrack from './RaceTrack';
+import {
+	startRace,
+	resetRace,
+	finishRace,
+	START_POSITION,
+	FINISH_POSITION
+} from '../../actions/trackRace';
 
 import './RaceTracks.css';
 
-const medalColorsClasses = [
-	'race-track__finish--first-place',
-	'race-track__finish--second-place',
-	'race-track__finish--third-place'
-];
-
-export const RaceTrack = ({ name, image, speed, isRaceStarted, place }) => {
-	const placeNumber =
-		// check range of car place and create view if needed
-		0 <= place && place < medalColorsClasses.length ? (
-			<div className="race-track__place-number">
-				<div>{place + 1}</div>
-			</div>
-		) : null;
-
-	return (
-		<div
-			className={`race-track ${
-				isRaceStarted ? 'race-track--race-end' : ''
-			}`}
-			title={`Top speed: ${speed}`}
-		>
-			<div className="race-track__wrapper">
-				<div
-					className={`race-track__finish ${
-						medalColorsClasses[place]
-					}`}
-				>
-					<img className="race-track__image" src={image} alt={name} />
-					{placeNumber}
-				</div>
-			</div>
-			<div className="race-track__line" />
-			<div className="race-track__finish-line" />
-		</div>
-	);
-};
-
-RaceTrack.propTypes = {
-	...carPropTypes,
-	isRaceStarted: PropTypes.bool,
-	place: PropTypes.number // car place at the end of the race
-};
-
-RaceTrack.defaultProps = {
-	isRaceStarted: false,
-	place: -1
-};
-
-class RaceTracks extends Component {
+export class RaceTracks extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			isRaceStarted: false,
 			positions: []
 		};
 
 		this._startRace = this._startRace.bind(this);
 		this._resetRace = this._resetRace.bind(this);
+		this._onCarReachedFinishLine = this._onCarReachedFinishLine.bind(this);
 	}
 
 	render() {
-		const { cars } = this.props;
-		const { isRaceStarted, positions } = this.state;
+		const { cars, trackDistance, isRaceStarted } = this.props;
+		const { positions } = this.state;
 
 		return (
 			<div className="container-fluid race-tracks-overview">
@@ -84,8 +44,12 @@ class RaceTracks extends Component {
 							<div className="col-md-12" key={curCar.id}>
 								<RaceTrack
 									{...curCar}
+									trackDistance={trackDistance}
 									place={positions.indexOf(curCar.id)}
 									isRaceStarted={isRaceStarted}
+									onFinishCallback={
+										this._onCarReachedFinishLine // callback will be invoked after transition end i trigger
+									}
 								/>
 							</div>
 						))
@@ -110,7 +74,9 @@ class RaceTracks extends Component {
 							<button
 								name="reset-race"
 								onClick={this._resetRace}
-								disabled={isRaceStarted === false}
+								disabled={
+									cars.length === 0 || isRaceStarted === false
+								}
 								className="button-control button-control--large"
 							>
 								Reset
@@ -122,29 +88,82 @@ class RaceTracks extends Component {
 		);
 	}
 
+	_onCarReachedFinishLine(id) {
+		this.setState(
+			state => {
+				return {
+					// update race positions with new id
+					positions: [...state.positions, id]
+				};
+			},
+			() => {
+				const { positions } = this.state;
+				const { cars, finishRace } = this.props;
+
+				// wait all cars to reach finish line
+				if (positions.length === cars.length) {
+					finishRace(); // fire action that all cars are on the finish line and that race is over
+				}
+			}
+		);
+	}
+
 	_startRace() {
-		const { cars } = this.props;
-		this.setState({
-			isRaceStarted: true, // start the race
-			// find out which car is fastest by speed
-			positions: cars
-				.concat() // don't mutate array
-				.sort((carA, carB) => carB.speed - carA.speed) // sort cars by speed
-				.map(curCar => curCar.id) // just take car id
-		});
+		this.props.startRace();
 	}
 
 	_resetRace() {
+		this.props.resetRace();
 		// reset race
 		this.setState({
-			isRaceStarted: false,
 			positions: []
 		});
 	}
 }
 
 RaceTracks.propTypes = {
-	cars: PropTypes.arrayOf(PropTypes.shape(carPropTypes)).isRequired
+	cars: PropTypes.arrayOf(PropTypes.shape(carPropTypes)).isRequired,
+	trackDistance: PropTypes.number.isRequired,
+	isRaceStarted: PropTypes.bool,
+	startRace: PropTypes.func,
+	resetRace: PropTypes.func,
+	finishRace: PropTypes.func
 };
 
-export default RaceTracks;
+RaceTracks.defaultProps = {
+	isRaceStarted: false,
+	startRace: () => {},
+	resetRace: () => {},
+	finishRace: () => {}
+};
+
+const mapStateToProps = state => {
+	// get cars object from redux store
+	const { traceRace } = state;
+	const { state: raceState } = traceRace;
+	return {
+		isRaceStarted:
+			raceState === START_POSITION || raceState === FINISH_POSITION
+	};
+};
+
+const mapDispatchToProps = dispatch => {
+	return {
+		// start race action
+		startRace() {
+			dispatch(startRace());
+		},
+		// reset race action
+		resetRace() {
+			dispatch(resetRace());
+		},
+		// finish race action
+		finishRace() {
+			dispatch(finishRace());
+		}
+	};
+};
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(RaceTracks);

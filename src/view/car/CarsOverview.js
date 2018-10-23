@@ -12,7 +12,8 @@ export const CarsOverview = ({
 	error,
 	loading,
 	onCarSelectionChange,
-	selectedCars
+	selectedCars,
+	disableSelection
 }) => {
 	let component = null;
 
@@ -48,6 +49,7 @@ export const CarsOverview = ({
 							{...curCar}
 							isSelected={selectedCars.includes(curCar.id)} // check if car is selected
 							onSelectionChanged={onCarSelectionChange} // callback is invoked every time selection on element changes
+							disableSelection={disableSelection}
 						/>
 					</div>
 				))
@@ -72,14 +74,16 @@ CarsOverview.propTypes = {
 	loading: PropTypes.bool,
 	error: PropTypes.instanceOf(Error),
 	onCarSelectionChange: PropTypes.func,
-	selectedCars: PropTypes.arrayOf(PropTypes.number)
+	selectedCars: PropTypes.arrayOf(PropTypes.number),
+	disableSelection: PropTypes.bool
 };
 
 CarsOverview.defaultProps = {
 	loading: false,
 	error: null,
 	onCarSelectionChange: () => {},
-	selectedCars: []
+	selectedCars: [],
+	disableSelection: false
 };
 
 export default CarsOverview;

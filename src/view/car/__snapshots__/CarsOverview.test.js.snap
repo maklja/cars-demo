@@ -11,7 +11,7 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA 1`] =
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview "
+        className="car-preview  "
         data-id={2}
         onClick={[Function]}
       >
@@ -65,7 +65,7 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA 1`] =
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview "
+        className="car-preview  "
         data-id={3}
         onClick={[Function]}
       >
@@ -130,7 +130,7 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA, wher
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview car-preview--selected"
+        className="car-preview car-preview--selected "
         data-id={2}
         onClick={[Function]}
       >
@@ -184,7 +184,7 @@ exports[`CarsOverview renders correctly with Mazda 3 and Mercedes Benz CLA, wher
       className="col-md-4 col-sm-6 col-xs-12 cars-overview-grid__item"
     >
       <div
-        className="car-preview "
+        className="car-preview  "
         data-id={3}
         onClick={[Function]}
       >

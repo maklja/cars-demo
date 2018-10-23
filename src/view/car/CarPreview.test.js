@@ -70,7 +70,7 @@ it('test selection change callback on initially unselected component', done => {
 			onSelectionChanged={(id, isSelected) => {
 				// callback is called every time selection is change
 				expect(id).toBe(car.id); // first parameter must be car id
-				expect(isSelected).toBeTruthy(); // second parameter must be selection flav
+				expect(isSelected).toBeTruthy(); // second parameter must be selection flag
 				done();
 			}}
 		/>
@@ -98,7 +98,7 @@ it('test selection change callback on initially selected component', done => {
 			onSelectionChanged={(id, isSelected) => {
 				// callback is called every time selection is change
 				expect(id).toBe(car.id); // first parameter must be car id
-				expect(isSelected).toBeFalsy(); // second parameter must be selection flav
+				expect(isSelected).toBeFalsy(); // second parameter must be selection flag
 				done();
 			}}
 		/>

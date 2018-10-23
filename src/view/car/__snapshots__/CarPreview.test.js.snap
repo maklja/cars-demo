@@ -2,7 +2,7 @@
 
 exports[`CarPreview renders correctly when selected 1`] = `
 <div
-  className="car-preview car-preview--selected"
+  className="car-preview car-preview--selected "
   data-id={3}
   onClick={[Function]}
 >
@@ -55,7 +55,7 @@ exports[`CarPreview renders correctly when selected 1`] = `
 
 exports[`CarPreview renders correctly with Mazda 3 1`] = `
 <div
-  className="car-preview "
+  className="car-preview  "
   data-id={2}
   onClick={[Function]}
 >
@@ -108,7 +108,7 @@ exports[`CarPreview renders correctly with Mazda 3 1`] = `
 
 exports[`CarPreview renders correctly with Mercedes Benz CLA 1`] = `
 <div
-  className="car-preview "
+  className="car-preview  "
   data-id={3}
   onClick={[Function]}
 >

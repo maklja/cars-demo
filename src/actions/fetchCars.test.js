@@ -83,7 +83,7 @@ describe('test fetchCars request', () => {
 		await fetchCarsAsync(dispatchMock);
 
 		// we expect 2 action to be triggered, one that request is started
-		// and other one that request is complited successfully
+		// and other one that request is completed successfully
 		expect(dispatchMock.mock.calls.length).toBe(2);
 
 		// get invoke arguments on dispatch functions
@@ -116,7 +116,7 @@ describe('test fetchCars request', () => {
 		await fetchCarsAsync(dispatchMock);
 
 		// we expect 2 action to be triggered, one that request is started
-		// and other one that request is complited with error
+		// and other one that request is completed with error
 		expect(dispatchMock.mock.calls.length).toBe(2);
 
 		// get invoke arguments on dispatch functions

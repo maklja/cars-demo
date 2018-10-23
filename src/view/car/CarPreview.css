@@ -10,22 +10,36 @@
 	min-height: 18.75em;
 	max-height: 40.75em;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .car-preview.car-preview--selected {
+
+	/* green selection border around selected element */
 	border: 0.6em solid #4caf50;
+}
+
+.car-preview.car-preview--disabled {
+
+	/* if selection is disabled put different cursor for user as indication */
+	cursor: not-allowed;
+}
+
+.car-preview.car-preview--selected.car-preview--disabled {
+
+	/* put red border around elements that are in the race */
+	border: 0.6em solid red;
 }
 
 .car-preview .car-preview__card {
 
 	/* Card container that contains front and back parts */
-	height: 90%;
+	height: 92%;
 	width: 100%;
 	position: relative;
 	transform-style: preserve-3d;
 	perspective: 500px; /* setup perspective for better 3D experience during fliping */
 	transition: 0.6s;
-	cursor: pointer;
 }
 
 .car-preview .car-preview__card .car-preview__front,
